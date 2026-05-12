@@ -160,7 +160,7 @@
                         <input type="number" name="sort_order" class="form-control"
                                value="{{ old('sort_order', 0) }}" min="0">
                         <small class="text-muted">
-                            Chhota number = pehle dikhega
+                            Smaller number = will be shown first.
                         </small>
                     </div>
                     <div class="col-md-12">
@@ -176,7 +176,7 @@
                             <div class="text-danger small mt-1">{{ $message }}</div>
                         @enderror
                         <small class="text-muted">
-                            Blank chhodo to banner hamesha dikhega
+                           Leave blank and the banner will always be shown.
                         </small>
                     </div>
                     <div class="col-md-12">
@@ -231,8 +231,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (file.size > 2 * 1024 * 1024) {
                 Swal.fire({
                     icon: 'error',
-                    title: '2MB se badi image!',
-                    text: 'Maximum 2MB allowed hai.',
+                    title: 'Image is larger than 2MB!',
+                    text: 'Maximum 2MB allowed.',
                     confirmButtonColor: '#E91E8C'
                 });
                 this.value = '';

@@ -131,8 +131,7 @@
                         <input type="file" name="image" id="desktopImg"
                                class="form-control" accept="image/*">
                         <div class="upload-hint">
-                            Nai image upload karo ya blank chhodo (purani rahegi)
-                            — Max 2MB
+                            Upload a new image or leave it blank (the previous one will remain) — Max 2MB.
                         </div>
                         @error('image')
                             <div class="text-danger small mt-1">{{ $message }}</div>
@@ -152,14 +151,14 @@
                         </div>
                         @else
                         <div class="mb-2">
-                            <small class="text-muted">Koi mobile image nahi hai</small>
+                            <small class="text-muted">There is no mobile image available.</small>
                         </div>
                         @endif
 
                         <input type="file" name="image_mobile" id="mobileImg"
                                class="form-control" accept="image/*">
                         <div class="upload-hint">
-                            Nai image upload karo ya blank chhodo — Max 2MB
+                           Upload a new image or leave it blank — Max 2MB.
                         </div>
                         @error('image_mobile')
                             <div class="text-danger small mt-1">{{ $message }}</div>
@@ -186,7 +185,7 @@
                         <input type="number" name="sort_order" class="form-control"
                                value="{{ old('sort_order', $banner->sort_order) }}"
                                min="0">
-                        <small class="text-muted">Chhota number = pehle dikhega</small>
+                        <small class="text-muted">Smaller number = will be shown first.</small>
                     </div>
                     <div class="col-md-12">
                         <label class="form-label fw-semibold">Start Date</label>
@@ -203,7 +202,7 @@
                         @if($banner->isExpired())
                         <div class="alert alert-danger py-1 mt-2 small">
                             <i class="bi bi-exclamation-triangle me-1"></i>
-                            Ye banner expire ho gaya hai!
+                           This banner has expired!
                         </div>
                         @endif
                     </div>
@@ -281,8 +280,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (file.size > 2 * 1024 * 1024) {
                 Swal.fire({
                     icon: 'error',
-                    title: '2MB se badi image!',
-                    text: 'Maximum 2MB allowed hai.',
+                    title: 'Image larger than 2MB!',
+                    text: 'Maximum of 2MB is allowed.',
                     confirmButtonColor: '#E91E8C'
                 });
                 this.value = '';

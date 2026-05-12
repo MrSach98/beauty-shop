@@ -106,13 +106,13 @@
       </div>
       <div class="modal-body text-center py-4">
         <div style="font-size:44px">🗑️</div>
-        <p class="mt-3 mb-1">Delete karna chahte ho?</p>
+        <p class="mt-3 mb-1">Do you want to delete it?</p>
         <p class="fw-bold" id="deleteProductName"></p>
-        <p class="text-danger small">Ye action undo nahi hogi!</p>
+        <p class="text-danger small">This action cannot be undone!</p>
       </div>
       <div class="modal-footer justify-content-center border-0">
         <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button class="btn btn-danger" id="confirmDeleteBtn">Delete Karo</button>
+        <button class="btn btn-danger" id="confirmDeleteBtn">Delete it.</button>
       </div>
     </div>
   </div>

@@ -85,7 +85,7 @@
                 <div class="col-md-12">
                     <label class="form-label fw-semibold">Description</label>
                     <textarea name="description" class="form-control" rows="3"
-                              placeholder="Brand ke baare me kuch likho..."></textarea>
+                              placeholder="write something about the brand..."></textarea>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label fw-semibold">Website URL</label>
@@ -161,7 +161,7 @@
                     <label class="form-label fw-semibold">
                         New Logo Upload
                         <small class="text-muted fw-normal">
-                            (Max 2MB — blank chhodo to purana rahega)
+                           (Max 2MB — leave blank to keep the previous one)
                         </small>
                     </label>
                     <input type="file" name="logo" id="editLogoInput"
@@ -225,14 +225,14 @@
       </div>
       <div class="modal-body text-center py-4">
         <div style="font-size:44px">🗑️</div>
-        <p class="mt-3 mb-1">Delete karna chahte ho?</p>
+        <p class="mt-3 mb-1">Do you want to delete it?</p>
         <p class="fw-bold" id="deleteBrandName"></p>
-        <p class="text-danger small">Ye action undo nahi hogi!</p>
+        <p class="text-danger small">This action cannot be undone!</p>
       </div>
       <div class="modal-footer justify-content-center border-0">
         <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
         <button class="btn btn-danger" id="confirmBrandDelete">
-            <i class="bi bi-trash me-1"></i>Delete Karo
+            <i class="bi bi-trash me-1"></i>Delete it.
         </button>
       </div>
     </div>
@@ -384,8 +384,8 @@ $(document).ready(function() {
         var box = $(this).closest('.current-logo-box').parent();
 
         Swal.fire({
-            icon:'warning', title:'Logo delete karo?',
-            text:'Logo folder se bhi delete ho jayega!',
+            icon:'warning', title:'Delete logo?',
+            text:'The logo will also be deleted from the folder!',
             showCancelButton: true,
             confirmButtonColor: '#dc3545',
             cancelButtonColor: '#6c757d',
@@ -397,7 +397,7 @@ $(document).ready(function() {
                     url: '/admin/brands/'+id+'/remove-logo',
                     type: 'DELETE',
                     success: function(res) {
-                        box.html('<p class="text-muted small">Logo delete ho gaya</p>');
+                        box.html('<p class="text-muted small">The logo has been deleted</p>');
                         table.ajax.reload();
                         Swal.fire({
                             icon:'success', title:'Deleted!', text:res.message,

@@ -70,21 +70,21 @@
     <div class="modal-content border-0 shadow">
       <div class="modal-header bg-danger text-white">
         <h5 class="modal-title fw-bold">
-            <i class="bi bi-trash me-2"></i>Delete Banner
+            <i class="bi bi-trash me-2"></i>Delete banner.
         </h5>
         <button type="button" class="btn-close btn-close-white"
                 data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body text-center py-4">
         <div style="font-size:44px">🗑️</div>
-        <p class="mt-3 mb-1">Delete karna chahte ho?</p>
+        <p class="mt-3 mb-1">Do you want to delete it?</p>
         <p class="fw-bold text-dark" id="deleteBannerTitle"></p>
-        <p class="text-danger small">Image bhi delete ho jayegi!</p>
+        <p class="text-danger small">The image will also be deleted!</p>
       </div>
       <div class="modal-footer justify-content-center border-0">
         <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
         <button class="btn btn-danger" id="confirmDelete">
-            <i class="bi bi-trash me-1"></i>Delete Karo
+            <i class="bi bi-trash me-1"></i>Delete it.
         </button>
       </div>
     </div>

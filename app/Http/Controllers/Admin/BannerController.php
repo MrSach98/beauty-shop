@@ -114,12 +114,12 @@ class BannerController extends Controller
             'start_date'   => 'nullable|date',
             'end_date'     => 'nullable|date|after_or_equal:start_date',
         ], [
-            'image.required'          => 'Banner image zaroori hai',
-            'image.max'               => 'Image max 2MB honi chahiye',
-            'type.required'           => 'Banner type select karo',
-            'position.required'       => 'Position select karo',
-            'link_url.url'            => 'Valid URL daalo (https://...)',
-            'end_date.after_or_equal' => 'End date, start date ke baad honi chahiye',
+            'image.required'          => 'Banner image is required',
+            'image.max'               => 'Image must be a maximum of 2MB',
+            'type.required'           => 'Please select a banner type',
+            'position.required'       => 'Please select a position',
+            'link_url.url'            => 'Please enter a valid URL (https://...)',
+            'end_date.after_or_equal' => 'End date, Should be after the start date',
         ]);
 
         $imageName = $this->uploadImage($request->file('image'), 'banners');
@@ -144,7 +144,7 @@ class BannerController extends Controller
         ]);
 
         return redirect()->route('admin.banners.index')
-                         ->with('success', 'Banner successfully add ho gaya! 🎉');
+                         ->with('success', 'Banner added successfully! 🎉');
     }
 
     // ── Edit ─────────────────────────────────────────────
@@ -200,7 +200,7 @@ class BannerController extends Controller
         ]);
 
         return redirect()->route('admin.banners.index')
-                         ->with('success', 'Banner update ho gaya!');
+                         ->with('success', 'Banner updated successfully!');
     }
 
     // ── Destroy ──────────────────────────────────────────
