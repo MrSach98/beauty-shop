@@ -23,10 +23,13 @@
 
         /* Sidebar */
         #sidebar {
-            width: 260px; min-height: 100vh;
+            width: 260px; 
+            height: 100vh;
             background: var(--sidebar-bg);
             position: fixed; top: 0; left: 0; z-index: 999;
             transition: all 0.3s;
+            overflow-y: auto;
+            scrollbar-width: thin;
         }
         .sidebar-brand {
             padding: 20px;
