@@ -23,10 +23,10 @@ class LoginController extends Controller
             'email'    => 'required|email',
             'password' => 'required|min:6',
         ], [
-            'email.required'    => 'Email daalna zaroori hai',
-            'email.email'       => 'Valid email daalo',
-            'password.required' => 'Password daalna zaroori hai',
-            'password.min'      => 'Password kam se kam 6 characters ka hona chahiye',
+            'email.required'    => 'Email is required.',
+            'email.email'       => 'Please enter a valid email address.',
+            'password.required' => 'Password is required.',
+            'password.min'      => 'Password must be at least 6 characters long.',
         ]);
 
         $credentials = $request->only('email', 'password');
@@ -37,7 +37,7 @@ class LoginController extends Controller
 
         if ($user && !$user->is_active) {
             return back()->withErrors([
-                'email' => 'Aapka account block kar diya gaya hai. Admin se contact karo.'
+                'email' => 'Your account has been blocked. Please contact the admin.'
             ])->withInput();
         }
 
@@ -47,7 +47,7 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Email ya Password is Wrong.',
+            'email' => 'Email or Password is incorrect.',
         ])->withInput($request->only('email'));
     }
 

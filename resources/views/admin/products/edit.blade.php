@@ -337,7 +337,7 @@
                     <label class="form-label fw-semibold">Key Ingredients</label>
                     <input type="text" name="key_ingredients" class="form-control"
                            value="{{ $ef['key_ingredients'] ?? '' }}"
-                           placeholder="Vitamin C, Niacinamide (comma se alag karo)">
+                        placeholder="Vitamin C, Niacinamide (separate with commas)">
                 </div>
                 <div class="col-md-12">
                     <label class="form-label fw-semibold">Full Ingredients List</label>

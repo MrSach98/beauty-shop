@@ -40,7 +40,7 @@
     <div class="brand">
         <div class="brand-icon">💄</div>
         <h4>Beauty Shop</h4>
-        <p class="text-muted small mb-0">Apne account mein login karo</p>
+        <p class="text-muted small mb-0">Login to your account</p>
     </div>
 
     {{-- Alerts --}}
@@ -95,23 +95,23 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
             <div class="form-check">
                 <input type="checkbox" name="remember" class="form-check-input" id="remember">
-                <label class="form-check-label small" for="remember">Mujhe yaad rakho</label>
+                <label class="form-check-label small" for="remember">Remember me</label>
             </div>
             <a href="#" class="small text-decoration-none" style="color:#E91E8C;">
-                Password bhool gaye?
+Forgot Password?
             </a>
         </div>
 
         <button type="submit" class="btn btn-pink">
-            <i class="bi bi-box-arrow-in-right me-2"></i>Login Karo
+            <i class="bi bi-box-arrow-in-right me-2"></i>Login
         </button>
     </form>
 
     <hr class="my-4">
     <p class="text-center text-muted small mb-0">
-        Account nahi hai?
+       Don't have an account?
         <a href="{{ route('register') }}" style="color:#E91E8C;" class="fw-bold text-decoration-none">
-            Register Karo
+           Register
         </a>
     </p>
 </div>
