@@ -102,7 +102,14 @@
         <div class="nav-section">Sales</div>
         <a href="#" class="nav-link"><i class="bi bi-cart3"></i> Orders</a>
         <a href="#" class="nav-link"><i class="bi bi-people"></i> Customers</a>
-        <a href="#" class="nav-link"><i class="bi bi-tag"></i> Coupons</a>
+        <a href="{{ route('admin.shipping.index') }}"
+            class="nav-link {{ request()->routeIs('admin.shipping.*') ? 'active' : '' }}">
+                <i class="bi bi-truck"></i> Shipping
+        </a>
+        <a href="{{ route('admin.shipping.index') }}"
+            class="nav-link {{ request()->routeIs('admin.shipping.*') ? 'active' : '' }}">
+                <i class="bi bi-truck"></i> Shipping
+        </a>
 
         <div class="nav-section">Content</div>
         <a href="{{ route('admin.banners.index') }}"
@@ -113,7 +120,10 @@
 
         <div class="nav-section">System</div>
         <a href="#" class="nav-link"><i class="bi bi-bar-chart"></i> Reports</a>
-        <a href="#" class="nav-link"><i class="bi bi-gear"></i> Settings</a>
+        <a href="{{ route('admin.settings.index') }}"
+            class="nav-link {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
+                <i class="bi bi-gear"></i> Settings
+        </a>
 
         <div class="mt-4 px-3">
             <form method="POST" action="{{ route('logout') }}">

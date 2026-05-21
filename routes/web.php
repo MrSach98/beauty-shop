@@ -11,6 +11,9 @@ use App\Http\Controllers\Admin\ChildSubcategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\DiscountController;
+use App\Http\Controllers\Admin\ShippingController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -108,7 +111,28 @@ Route::get('/banners/{id}/edit',      [BannerController::class, 'edit'])->name('
 Route::post('/banners/{id}',          [BannerController::class, 'update'])->name('banners.update');
 Route::delete('/banners/{id}',        [BannerController::class, 'destroy'])->name('banners.destroy');
 
-        
+// ── Discount Codes ─────────────────────────────────────
+
+Route::post('/discounts/toggle-status', [DiscountController::class, 'toggleStatus'])->name('discounts.toggle');
+Route::get('/discounts/generate-code',  [DiscountController::class, 'generateCode'])->name('discounts.generate-code');
+Route::get('/discounts',                [DiscountController::class, 'index'])->name('discounts.index');
+Route::get('/discounts/create',         [DiscountController::class, 'create'])->name('discounts.create');
+Route::post('/discounts',               [DiscountController::class, 'store'])->name('discounts.store');
+Route::get('/discounts/{id}/edit',      [DiscountController::class, 'edit'])->name('discounts.edit');
+Route::post('/discounts/{id}',          [DiscountController::class, 'update'])->name('discounts.update');
+Route::delete('/discounts/{id}',        [DiscountController::class, 'destroy'])->name('discounts.destroy');
+
+Route::get('/shipping',                   [ShippingController::class, 'index'])->name('shipping.index');
+Route::post('/shipping/settings',         [ShippingController::class, 'saveSettings'])->name('shipping.save-settings');
+Route::post('/shipping/zones',            [ShippingController::class, 'storeZone'])->name('shipping.zones.store');
+Route::post('/shipping/zones/{id}',       [ShippingController::class, 'updateZone'])->name('shipping.zones.update');
+Route::delete('/shipping/zones/{id}',     [ShippingController::class, 'destroyZone'])->name('shipping.zones.destroy');
+Route::post('/shipping/zones/toggle',     [ShippingController::class, 'toggleZone'])->name('shipping.zones.toggle');
+
+
+    Route::get('/settings',          [SettingController::class, 'index'])->name('settings.index');
+Route::post('/settings',         [SettingController::class, 'update'])->name('settings.update');
+Route::post('/settings/test-email', [SettingController::class, 'testEmail'])->name('settings.test-email');    
      });
 
      // ── Frontend ──────────────────────────────────────────
